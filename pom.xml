@@ -27,8 +27,7 @@
         <spring.batch.version>4.1.0.RELEASE</spring.batch.version>
         <mysql.driver.version>5.1.25</mysql.driver.version>
         <junit.version>4.11</junit.version>
-        <hibernate.version>5.4.4.Final</hibernate.version>
-        <spring.orm.version>5.1.9.RELEASE</spring.orm.version>
+        <hikari.version>3.2.0</hikari.version>
     </properties>
 
     <dependencies>
@@ -90,16 +89,10 @@
             <version>1.18.8</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>${hibernate.version}</version>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>${hikari.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>${spring.orm.version}</version>
-        </dependency>
-
         <!-- Junit -->
         <dependency>
             <groupId>junit</groupId>
