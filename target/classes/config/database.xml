@@ -18,8 +18,8 @@
         <property name="password" value="${password}" />
     </bean>
 
-    <!-- <bean id="transactionManager"
-         class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />-->
+    <bean id="transactionManager"
+         class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
 
 
     <!-- create job-meta tables automatically -->

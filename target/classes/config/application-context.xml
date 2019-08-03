@@ -6,7 +6,6 @@
 
     <!-- stored job-meta in memory -->
     <import resource="database.xml" />
-    <import resource="hibernate-config.xml" />
 
     <!-- stored job-meta in database -->
     <bean id="jobRepository"

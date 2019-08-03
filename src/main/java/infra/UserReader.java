@@ -6,18 +6,19 @@ import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.NonTransientResourceException;
 import org.springframework.batch.item.ParseException;
 import org.springframework.batch.item.UnexpectedInputException;
-import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import java.util.List;
 
 @Data
 public class UserReader implements ItemReader<List<User>> {
 
-    private HibernateTemplate hibernateTemplate;
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
 
     public List<User> read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
-        List<User> users = hibernateTemplate.loadAll(User.class);
+        String QUERY = "SELECT * FROM user";
+        List<User> users = namedParameterJdbcTemplate.query(QUERY, new UserRowMapper());
         users.forEach(System.out::println);
         return users;
     }

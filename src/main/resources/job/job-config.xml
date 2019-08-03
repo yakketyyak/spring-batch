@@ -8,14 +8,10 @@
 	">
     <import resource="classpath:config/database.xml" />
     <import resource="classpath:config/application-context.xml" />
-    <import resource="classpath:config/hibernate-config.xml" />
 
-   <!-- <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>-->
-    <!--<bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
-       <constructor-arg ref="dataSource"/>
-    </bean>-->
+    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="dataSource"/>
+    </bean>
 
     <batch:job id="myFirstJob">
         <batch:step id="step1">
@@ -26,23 +22,13 @@
             </batch:tasklet>
         </batch:step>
     </batch:job>
-    <!--<bean id="userReader"
-          class="infra.UserReader" >
-        <property name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate"/>
-    </bean>-->
-
     <bean id="userReader"
           class="infra.UserReader" >
-        <property name="hibernateTemplate" ref="hibernateTemplate"/>
-    </bean>
-    <!--<bean id="userWriter"
-          class="infra.UserWriter" >
         <property name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate"/>
-    </bean>-->
-
+    </bean>
     <bean id="userWriter"
           class="infra.UserWriter" >
-        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+        <property name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate"/>
     </bean>
     <bean id="userProcessor"
           class="infra.UserProcessor" />
