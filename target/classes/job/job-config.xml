@@ -6,8 +6,8 @@
 		http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 	">
-    <import resource="classpath:config/database.xml" />
-    <import resource="classpath:config/application-context.xml" />
+    <import resource="classpath:fr/pb/test/batch/config/database.xml" />
+    <import resource="classpath:fr/pb/test/batch/config/application-context.xml" />
 
     <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
         <constructor-arg ref="dataSource"/>
@@ -23,14 +23,14 @@
         </batch:step>
     </batch:job>
     <bean id="userReader"
-          class="infra.UserReader" >
+          class="fr.pb.test.batch.infra.UserReader" >
         <property name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate"/>
     </bean>
     <bean id="userWriter"
-          class="infra.UserWriter" >
+          class="fr.pb.test.batch.infra.UserWriter" >
         <property name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate"/>
     </bean>
     <bean id="userProcessor"
-          class="infra.UserProcessor" />
+          class="fr.pb.test.batch.infra.UserProcessor" />
 
 </beans>

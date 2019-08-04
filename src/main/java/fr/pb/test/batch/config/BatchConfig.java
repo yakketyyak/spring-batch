@@ -1,9 +1,9 @@
-package config;
+package fr.pb.test.batch.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import domain.User;
-import infra.UserRowMapper;
+import fr.pb.test.batch.domain.User;
+import fr.pb.test.batch.infra.UserRowMapper;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;

@@ -1,6 +1,6 @@
-package infra;
+package fr.pb.test.batch.infra;
 
-import domain.User;
+import fr.pb.test.batch.domain.User;
 import lombok.Data;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

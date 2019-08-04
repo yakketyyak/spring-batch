@@ -1,6 +1,6 @@
-package infra;
+package fr.pb.test.batch.infra;
 
-import domain.User;
+import fr.pb.test.batch.domain.User;
 import org.springframework.batch.item.ItemProcessor;
 
 import java.util.Date;

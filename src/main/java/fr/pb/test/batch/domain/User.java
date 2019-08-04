@@ -1,4 +1,4 @@
-package domain;
+package fr.pb.test.batch.domain;
 
 import lombok.Data;
 
