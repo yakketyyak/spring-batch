@@ -6,8 +6,8 @@
 		http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 	">
-    <import resource="classpath:fr/pb/test/batch/config/database.xml" />
-    <import resource="classpath:fr/pb/test/batch/config/application-context.xml" />
+    <import resource="classpath:config/database.xml" />
+    <import resource="classpath:config/application-context.xml" />
 
     <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
         <constructor-arg ref="dataSource"/>
